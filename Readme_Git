@@ -1,0 +1,5 @@
+1. Instalar Github desde la pagina http://gitbub.com
+2. Abrir Code editor
+3. Comando: CTRL SHIP P y escribir comando git clone
+4. Incluir el URL del sitio 
+5. Cuando se requiera subir los archivos ejecutar el comando git push
