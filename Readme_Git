@@ -11,11 +11,10 @@ PARA SUBIR LOS CAMBIOS USANDO EL DESKTOP
 4. Luego para subirlo a la web seleccione del menu Repository--> push
 
 ====================================================================================================================================================================
-
 DESDE VISUAL STUDIO
-
 2. Abrir Code editor
 3. Comando: CTRL SHIP P y escribir comando git clone
 4. Incluir el URL del sitio 
 5. Cuando se requiera subir los archivos ejecutar el comando git push
 6. Otro punto
+====================================================================================================================================================================
