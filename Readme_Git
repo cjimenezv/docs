@@ -1,4 +1,19 @@
-1. Instalar Github desde la pagina http://gitbub.com. De hecho la pagina donde esta en instalador es: https://desktop.github.com/. Este instala todo un set de herramientas para trabajar localmente.
+====================================================================================================================================================================
+INSTALADOR
+====================================================================================================================================================================
+1. Instalar Github desde https://desktop.github.com/. Este instala todo un set de herramientas para trabajar localmente.
+===================================================================================================================================================================
+PARA SUBIR LOS CAMBIOS USANDO EL DESKTOP
+====================================================================================================================================================================
+1. Abra la herramienta desktop github.
+2. Clone el repositorio, desde la option de File-->Clone repositoy
+3. Para subir los cambios, primero use la opcion de "Commit a master", en la parte inferior izquierda.
+4. Luego para subirlo a la web seleccione del menu Repository--> push
+
+====================================================================================================================================================================
+
+DESDE VISUAL STUDIO
+
 2. Abrir Code editor
 3. Comando: CTRL SHIP P y escribir comando git clone
 4. Incluir el URL del sitio 
