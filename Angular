@@ -108,5 +108,14 @@ CONOCEPTOS
              console.log('Hola hicieron click en el boton');
            }
    
+- TEMPLATE REFERENCE VARIABLES: Consiste en pasar la data de la vista (html) a la clase (ts)
+   - Ejemplo:
+      - Colocar componente de texto y boton en la vista html
+            <input type="text" #myTexto1 />
+            <button (click)="pasarDatos(myTexto1.value)"  >Ver dato</button>
+      - En la clase ts se recibe como un parametro
+           pasarDatos(dato){
+             console.log('El dato en la caja es:' + dato);
+           }      
 
-
+      
