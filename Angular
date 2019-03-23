@@ -19,7 +19,7 @@ COMANDOS
 CONOCEPTOS
 ====================================================================================================================================
 
-- Referente al selector en un componente y como dependiendo de este lo invoco, así:
+- Referente a las 3 diferentes maneras de indicar el 'selector' en un componente y como dependiendo de este lo invoco, así:
    - Definicion 1: selector: 'app-comptest1' , entonces lo invoco con etiquetas: <app-comptest1></app-comptest1>
    - Definicion 2: selector: '.app-comptest1', entonces lo invoco como una clase dentro de una etiqueta html: <div class="app-comptest1"></div>
    - Definicion 3: selector: '[app-comptest1]', entonces lo invoco como una propiedad dentro de una etiqueta html: <div app-comptest1></div>
