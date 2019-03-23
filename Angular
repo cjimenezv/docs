@@ -23,3 +23,12 @@ CONOCEPTOS
    - Definicion 1: selector: 'app-comptest1' , entonces lo invoco con etiquetas: <app-comptest1></app-comptest1>
    - Definicion 2: selector: '.app-comptest1', entonces lo invoco como una clase dentro de una etiqueta html: <div class="app-comptest1"></div>
    - Definicion 3: selector: '[app-comptest1]', entonces lo invoco como una propiedad dentro de una etiqueta html: <div app-comptest1></div>
+
+- INTERPOLATION: Esto es cuando defino una clases dentro del elemento ts, es decir donde se crea la logica y lo presento en la vista, es decir en el elemento html
+   - Ejemplo: 
+      - defino la variable nombre en el elemento ts:
+         public nombre: string = "Carlos Jimenez";
+      - la invoco desde el elemento html, así:
+         <p>Variable nombre invocada por string interpolaton: <b>{{nombre}}</b></p>
+         
+   
