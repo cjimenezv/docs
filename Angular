@@ -49,7 +49,7 @@ CONOCEPTOS
             <input type="text"  [id]="identificador" value="Carlos J" />
          
 - CLASS BINDING: Consiste en dar el estilo de visualizacion de un componente desde la variable definida en el cofigo del elemento ts.
-   - Ejemplo:
+   - Ejemplo 1:
       - Defino dos clases en el elemento css, así:
             .texto-titulo{
                 color: red;
@@ -67,5 +67,11 @@ CONOCEPTOS
       - Ahora, en el primer text asigno la clase directamente, pero en el segundo uso Class Binding:
          <p class="texto-titulo" >Ejemplo asignando directamente la clase</p>
          <p [class]="claseUsar" >Ejemplo asignandola por class binding</p>
+     
+     -Ejemplo 2: mostrar o no una clase dependiendo si una variable booleana esta prendida o no.
+      - Defino la variable en el elemento ts:
+            public textoEsTitulo: boolean = false;
+      - Desde el html usando class binding asigno la clase y esta sera desplegada o no acorde con el valor de la variable en el elemento ts
+            <p [class.texto-titulo]="textoEsTitulo" >Ejemplo por class binding usando un booleano desde el codigo</p>
       
       
