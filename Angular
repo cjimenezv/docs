@@ -75,3 +75,11 @@ CONOCEPTOS
             <p [class.texto-titulo]="textoEsTitulo" >Ejemplo por class binding usando un booleano desde el codigo</p>
       
       
+- STYLE BINDING: Consiste en colocar el valor de un style, dependiendo del valor de una variable.
+   - Ejemplo: Si un texto es importante lo muestro en verde sino lo es entonce en naranja
+      - Defino la variable:
+         public esTextoImportante: boolean = true;
+      - Desde el html pregunto por la variable así:
+         <p [style.color]="esTextoImportante ? 'green' : 'orange'" >Ejemplo de style binding</p>
+
+
