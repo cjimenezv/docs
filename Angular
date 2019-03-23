@@ -97,3 +97,16 @@ CONOCEPTOS
 
       - Tomo su valor desde el html, asi:
             <p [ngStyle]="tiluloEspecial" >Ejemplo de style binding</p>
+
+
+- EVENT BINDING: Consiste en invocar un metodo desde la vista en este caso nuestro elemento html al elemento ts.
+   - Ejemplo.
+      - Creo el boton desde el html:
+            <button (click)="imprimirLog()" >Hazme Click</button>
+      - Creo el metodo desde el componente ts:
+            imprimirLog(){
+             console.log('Hola hicieron click en el boton');
+           }
+   
+
+
