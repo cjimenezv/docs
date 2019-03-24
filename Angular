@@ -120,5 +120,13 @@ CONOCEPTOS
            pasarDatos(dato){
              console.log('El dato en la caja es:' + dato);
            }      
-
+- TWO WAY BINDING: Es tener counicacion em ambas vias, es decir que tanto vista como clase se alimentes del mismo valor.
+     - Ejemplo:
+      - Importar en app-modules la libreria FormModule y colocarla en el import.
+            import { FormsModule } from '@angular/forms';
+      - Definir la variable en la clase:
+            public nombre: string = "Carlos Jimenez";
+      - Referencias la variable en la vista asi:
+            <input type="text"  [(ngModel)]="nombre"/>
+            
       
