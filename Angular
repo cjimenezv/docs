@@ -128,5 +128,9 @@ CONOCEPTOS
             public nombre: string = "Carlos Jimenez";
       - Referencias la variable en la vista asi:
             <input type="text"  [(ngModel)]="nombre"/>
+   
+  -STRUCTURAL DIRECTIVES
+  
+    1. ngIf
             
       
