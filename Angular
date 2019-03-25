@@ -193,8 +193,15 @@ CONOCEPTOS
                 private colores = ["azul", "rojo", "amarillo", "rosado", "verde"];
                 
             - Desde la capa de presentacióm imprimo una tabla mientras recorro el arreglo así:
-                <table *ngFor="let color of colores" border="1" align="center" >
-                    <th>{{ color }}</th>
-                </table>
+                <table border="1" align="center" >
+                   <tr>
+                       <th>Indice</th>
+                       <th>Color</th>
+                   <tr>
+                   <tr  *ngFor="let color of colores; index as i">
+                       <td>{{ i }}</td>
+                       <td>{{ color }}</td>
+                   </tr>
+               </table>
             
     
