@@ -131,7 +131,7 @@ CONOCEPTOS
    
   -STRUCTURAL DIRECTIVES
   
-    1. ngIf: Permite tomar desiciones en la vista de renderizar o no un componente, deprendiendo de lo que queramos hacer.
+    1. Directiva ngIf: Permite tomar desiciones en la vista de renderizar o no un componente, deprendiendo de lo que queramos hacer.
     
       Ejemplo 1:
       
@@ -169,3 +169,20 @@ CONOCEPTOS
                    <p>Estamos viendo el BLOQUE SECUNDARIO</p>
                </ng-template>
         
+    1. Directiva ngSwitch: Permite tomar decisiones en la capa de presentación de acuerdo a valores en la capa de control o clase.
+    
+       Ejemplo:
+       
+       - Desde la clase inicio una variable con un color.
+               private colorLetra: string = "red";
+       - Desde la capa de presentación se toma el comportamiento de visualización, acorde al color seleccionado
+               <div [ngSwitch]="colorLetra">
+                   <div *ngSwitchCase="'red'"> <p  [style.color]="colorLetra">   El color es rojo </p> </div>
+                   <div *ngSwitchCase="'blue'"> <p [style.color]="colorLetra"> El color es azul </p> </div>
+                   <div *ngSwitchCase="'yellow'"> <p [style.color]="colorLetra"> El color es amarillo </p> </div>
+                   <p>Escribe el valor: red, blue o yellow</p><input type="text"   [(ngModel)]="colorLetra"/>
+               </div>
+       
+       
+    
+    
