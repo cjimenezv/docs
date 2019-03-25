@@ -131,6 +131,19 @@ CONOCEPTOS
    
   -STRUCTURAL DIRECTIVES
   
-    1. ngIf
+    1. ngIf: Permite tomar desiciones en la vista de renderizar o no un componente, deprendiendo de lo que queramos hacer.
+    
+      Ejemplo 1:
+      
+          - Defino la etiqueta sobre la vista asi:
+               <p *ngIf="verTexto" >Este texto se vera o no dependiendo si la variable verTexto esta verdadera</p>
+          - Defino una variable booleana en la clase y la pongo verdadero si quiero que el texto aparezca
+               private verTexto: boolean = true;
+          - Coloco el  boton en la vista y con este prendo o apago la variable:
+               <button (click)="visualizarTexto()" >Ver texto</button>
+               
+               visualizarTexto(){
+                  this.verTexto = ! this.verTexto;
+               }
             
       
