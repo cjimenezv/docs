@@ -180,6 +180,7 @@ CONOCEPTOS
                    <div *ngSwitchCase="'red'"> <p  [style.color]="colorLetra">   El color es rojo </p> </div>
                    <div *ngSwitchCase="'blue'"> <p [style.color]="colorLetra"> El color es azul </p> </div>
                    <div *ngSwitchCase="'yellow'"> <p [style.color]="colorLetra"> El color es amarillo </p> </div>
+                   <div *ngSwitchDefault> <p> El color es indefinido </p> </div>
                    <p>Escribe el valor: red, blue o yellow</p><input type="text"   [(ngModel)]="colorLetra"/>
                </div>
        
