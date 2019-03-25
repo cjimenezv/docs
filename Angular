@@ -135,15 +135,27 @@ CONOCEPTOS
     
       Ejemplo 1:
       
-          - Defino la etiqueta sobre la vista asi:
+          - Defino la etiqueta sobre la vista e igualmente un boton que llama a la funcion para que cambie el valor de la variable;
                <p *ngIf="verTexto" >Este texto se vera o no dependiendo si la variable verTexto esta verdadera</p>
+               <button (click)="visualizarTexto()" >Ver texto</button>
           - Defino una variable booleana en la clase y la pongo verdadero si quiero que el texto aparezca
                private verTexto: boolean = true;
-          - Coloco el  boton en la vista y con este prendo o apago la variable:
-               <button (click)="visualizarTexto()" >Ver texto</button>
                
                visualizarTexto(){
                   this.verTexto = ! this.verTexto;
                }
             
-      
+       Ejemplo 2: este incluye un sino, cuando el texto principal no se muestra así:
+       
+          - Defino un texto en la vista  que se muestra o no dependiendo del valor de una variable. Si esta es falsa, entonces se muestra el bloque por la opcion SINO
+                    <p *ngIf="verTexto; else bloqueSiNo" >Este texto se vera o no dependiendo si la variable verTexto esta verdadera</p>
+                    <ng-template #bloqueSiNo>
+                        <p>El texto ha sido ocultado!!!</p>
+                    </ng-template>
+                    <button (click)="visualizarTexto()" >Ver texto</button>          
+          - Sobre la clase defino la variable y el metodo que prende y apaga       
+               private verTexto: boolean = true;
+               
+               visualizarTexto(){
+                  this.verTexto = ! this.verTexto;
+               }
