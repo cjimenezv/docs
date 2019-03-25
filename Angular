@@ -159,3 +159,13 @@ CONOCEPTOS
                visualizarTexto(){
                   this.verTexto = ! this.verTexto;
                }
+               
+        Ejemplo 3: este trabaja con las directivas then y else. Veamos:
+               <div *ngIf="verTexto; then bloquePrincipal; else bloqueSecundario" ></div>
+               <ng-template #bloquePrincipal>
+                   <p>Estamos viendo el BLOQUE PRINCIPAL</p>
+               </ng-template>
+               <ng-template #bloqueSecundario>
+                   <p>Estamos viendo el BLOQUE SECUNDARIO</p>
+               </ng-template>
+        
