@@ -169,7 +169,7 @@ CONOCEPTOS
                    <p>Estamos viendo el BLOQUE SECUNDARIO</p>
                </ng-template>
         
-    1. Directiva ngSwitch: Permite tomar decisiones en la capa de presentación de acuerdo a valores en la capa de control o clase.
+    2. Directiva ngSwitch: Permite tomar decisiones en la capa de presentación de acuerdo a valores en la capa de control o clase.
     
        Ejemplo:
        
@@ -185,5 +185,16 @@ CONOCEPTOS
                </div>
        
        
-    
+     2. Directiva ngFor: Se utiliza para recorrer estructuras de datos.
+     
+          Ejemplo:
+            
+            - En la clase defino un arreglo de colores asi:
+                private colores = ["azul", "rojo", "amarillo", "rosado", "verde"];
+                
+            - Desde la capa de presentacióm imprimo una tabla mientras recorro el arreglo así:
+                <table *ngFor="let color of colores" border="1" align="center" >
+                    <th>{{ color }}</th>
+                </table>
+            
     
