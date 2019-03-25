@@ -128,10 +128,12 @@ CONOCEPTOS
             public nombre: string = "Carlos Jimenez";
       - Referencias la variable en la vista asi:
             <input type="text"  [(ngModel)]="nombre"/>
-   
-  -STRUCTURAL DIRECTIVES
-  
-    1. Directiva ngIf: Permite tomar desiciones en la vista de renderizar o no un componente, deprendiendo de lo que queramos hacer.
+
+====================================================================================================================================
+STRUCTURAL DIRECTIVES
+====================================================================================================================================
+
+ DIRECTIVA ngIf: Permite tomar desiciones en la vista de renderizar o no un componente, deprendiendo de lo que queramos hacer.
     
       Ejemplo 1:
       
@@ -169,7 +171,7 @@ CONOCEPTOS
                    <p>Estamos viendo el BLOQUE SECUNDARIO</p>
                </ng-template>
         
-    2. Directiva ngSwitch: Permite tomar decisiones en la capa de presentación de acuerdo a valores en la capa de control o clase.
+DIRECTIVA ngSwitch: Permite tomar decisiones en la capa de presentación de acuerdo a valores en la capa de control o clase.
     
        Ejemplo:
        
@@ -185,7 +187,7 @@ CONOCEPTOS
                </div>
        
        
-     2. Directiva ngFor: Se utiliza para recorrer estructuras de datos.
+DIRECTIVA ngFor: Se utiliza para recorrer estructuras de datos.
      
           Ejemplo:
             
@@ -204,4 +206,8 @@ CONOCEPTOS
                    </tr>
                </table>
             
+            
+====================================================================================================================================
+COMUNICATION - COMPONENT INTERACTION
+====================================================================================================================================
     
