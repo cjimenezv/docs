@@ -342,29 +342,40 @@ Para usar un servicio siga los siguientes pasos:
    - Luego debe incluirlo en la lista de providers
          providers: [EmpleadoService],
          
+ 4. Cree la clase que va a representar los registros retornados por el servicio:
+ 
+    - Cree la clase con el comando: ng g cl modelo/empleado
+    
+    - Cree los campos en la clase:
+              export class Empleado {
+                  public id: number;
+                  public nombre: string;
+                  public edad: number;
+              }
+         
+         
  4. Sobre el componente hago uso del servicio, defniendolo primero en el constructor y luego invocandolo en el ngOnInit
  
-         import { Component, OnInit } from '@angular/core';
-         import { EmpleadoService } from '../servicios/empleado.service';
+             import { Component, OnInit } from '@angular/core';
+             import { EmpleadoService } from '../servicios/empleado.service';
+             import { Empleado } from '../modelo/empleado';
 
-         @Component({
-           selector: 'app-empleado',
-           templateUrl: './empleado.component.html',
-           styleUrls: ['./empleado.component.css']
-         })
-         export class EmpleadoComponent implements OnInit {
+             @Component({
+               selector: 'app-empleado',
+               templateUrl: './empleado.component.html',
+               styleUrls: ['./empleado.component.css']
+             })
+             export class EmpleadoComponent implements OnInit {
 
-           public listaEmpleados = [];
+               public listaEmpleados: Empleado[];
 
-           constructor( private _empleadoService: EmpleadoService ) { }
+               constructor( private _empleadoService: EmpleadoService ) { }
 
-           ngOnInit() {
-             this.listaEmpleados = this._empleadoService.getEmpleados();
-           }
+               ngOnInit() {
+                 this.listaEmpleados = this._empleadoService.getEmpleados();
+               }
 
-         }
-
-
+             }
 
 
    
