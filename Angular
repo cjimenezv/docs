@@ -302,8 +302,38 @@ Es necesario las variables de JSON y Date desde la clase así:
 ====================================================================================================================================
 SERVICES AND DI  (DEPENDENCY INJECTION) DESING PATTERN
 ====================================================================================================================================
-   
-   
+
+Un servicion nos sirve para entregar datos y para interactuar con aplicaciones fuera de nuestra aplicación. 
+Para usar un servicio siga los siguientes pasos:
+
+1. Cree el servicio con el comando: ng g s 'nombre_servicio'
+
+     Ejemplo: ng g s /servicios/empleado
+     
+2. Creese el metodo que va a devolver los datos
+
+    Ejemplo:
+    
+        import { Injectable } from '@angular/core';
+
+        @Injectable({
+          providedIn: 'root'
+        })
+        
+        export class EmpleadoService {
+
+          constructor() { }
+
+          getEmpleados(){
+            return [
+                {id: 1, nombre: "Carlos Jimenez", edad: 47},
+                {id: 1, nombre: "Roberto Vargas", edad: 32},
+                {id: 1, nombre: "Juan Rodriguez", edad: 37},
+                {id: 1, nombre: "Claudia Ballen", edad: 45}
+            ];
+          }
+        }
+
       
       
    
