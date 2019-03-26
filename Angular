@@ -226,6 +226,35 @@ PRIMERA INETRACCION DEL COMPONENTE PADRE AL COMPONENTE HIJO.
    - En la clase, cree la variable en este caso texto, debe cuenta que se hace uso de Property Binding:
       public texto: string;
       
+
+SEGUNDA INTERACCION DEL HIJO AL PADRE
+
+1. Sobre el hijo:
+   - Defina el evento que se va a disparar para pasar el dato al padre, esto sobre la clase
+     @Output() public eventoHijo = new EventEmitter();
+   
+   - Tenga en cuenta de importar tanto EventEmitter como Output;
+     import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+
+   - Implemente la funcion que va a disparar el evento:
+      enviarTextoAPadre(mitexto){
+       this.eventoHijo.emit(mitexto);
+      }
+
+    - Defina sobre la vista el boton que va a disparar la accion implementada:
+      <input type="text" #miTexto1/>
+      <button  (click)="enviarTextoAPadre(miTexto1.value)" >Enviar a Padre</button>
+
+2. Sobre el padre:
+     - Defina sobre la vista el evento en el llamado al componente hijo
+       <app-hijo [textohijo]="texto"  (eventoHijo)="mensajeDesdeHijo=$event"  ></app-hijo>
+     - Defina la variabke en la clase a la cual se asigna el valor
+       public mensajeDesdeHijo: string;
+    
+   
+   
+   
+   
       
       
    
