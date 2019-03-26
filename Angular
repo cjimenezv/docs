@@ -210,4 +210,27 @@ DIRECTIVA ngFor: Se utiliza para recorrer estructuras de datos.
 ====================================================================================================================================
 COMUNICATION - COMPONENT INTERACTION
 ====================================================================================================================================
-    
+   
+PRIMERA INETRACCION DEL COMPONENTE PADRE AL COMPONENTE HIJO.
+
+1. Sobre el componente hijo:
+   - Defina en la clase la propiedad sobre la cual va a recibir  el dato:
+      @Input('textohijo') public textoAPresentar: string;
+      
+   - Al colocar el decorador Input() este automaticamente importa la libreria, de no ser asi hagalo a mano:
+      import { Component, OnInit, Input } from '@angular/core';
+      
+2. Sobre el componente padre:
+   - En la vista invoque la propiedad del componente hijo:
+      <app-hijo [textohijo]="texto" ></app-hijo>
+   - En la clase, cree la variable en este caso texto, debe cuenta que se hace uso de Property Binding:
+      public texto: string;
+      
+      
+      
+   
+   
+
+
+
+
