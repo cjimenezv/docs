@@ -16,7 +16,9 @@ INSTALADORES
 COMANDOS
 ====================================================================================================================================
 - Crear un proyecto: ng new my-dream-app
-- Crear un componente: ng g c 
+- Crear un componente: ng g c 'nombre_componente' 
+- Crear un servicio: ng g s 'nombre_servicio'
+- Crear un servicio: ng g cl 'nombre_servicio'
 
 ====================================================================================================================================
 CONOCEPTOS
