@@ -415,7 +415,7 @@ Para consumir los servicios HTTP.
            }
          }
 
-3. Elimine el arreglo (hard code) del metodo get empleados e invoque el URL del servicio
+3. Elimine el arreglo (hard code) del metodo getEmpleados() e invoque el URL del servicio
 
          import { Injectable } from '@angular/core';
          import { HttpClient } from '@angular/common/http';
@@ -461,9 +461,9 @@ Para consumir los servicios HTTP.
          })
          export class EmpleadoComponent implements OnInit {
 
-           public listaEmpleados: Empleado[];
+         public listaEmpleados: Empleado[];
 
-           constructor( private _empleadoService: EmpleadoService ) { }
+         constructor( private _empleadoService: EmpleadoService ) { }
 
          ngOnInit() {
              this._empleadoService.getEmpleados()
