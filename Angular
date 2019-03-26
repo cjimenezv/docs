@@ -251,8 +251,52 @@ SEGUNDA INTERACCION DEL HIJO AL PADRE
      - Defina la variabke en la clase a la cual se asigna el valor
        public mensajeDesdeHijo: string;
     
-   
-   
+====================================================================================================================================
+FORMATING  - PIPES
+====================================================================================================================================
+
+Para formatear desde cadenas, numeros, monedas y fechas.
+
+Sobre la vista use pipe asi:
+
+       <p>Textos</p>
+       <p>{{ nombre | lowercase}}</p>
+       <p>{{ nombre | uppercase}}</p>
+       <p>{{ nombre | titlecase}}</p>
+       <p>{{ nombre | slice:3:8}}</p>
+
+       <p>Objetos JSON</p>
+       <p>{{ tiluloEspecial | json }}</p>
+
+       <p>Numeros</p>
+       <p>{{ 233.458 | number:'1.2-6' }}</p>
+       <p>{{ 3.458 | number:'2.2-3' }}</p>
+
+       <p>Porcentajes</p>
+       <p>{{ 0.25 | percent }}</p>
+
+       <p>Monedas</p>
+       <p>{{ 0.78 | currency }}</p>
+       <p>{{ 65.09 | currency: 'GBP' }}</p>
+       <p>{{ 65.09 | currency: 'COP' }}</p>
+
+       <p>Fechas</p>
+       <p>{{ fecha }}</p>
+       <p>{{ fecha | date:'short' }}</p>
+       <p>{{ fecha | date:'shortDate' }}</p>
+       <p>{{ fecha | date:'shortTime' }}</p>
+
+
+Es necesario las variables de JSON y Date desde la clase así:
+
+        public fecha: Date = new Date();
+
+        public tiluloEspecial = {
+          color: "blue",
+          fontStyle: "italic"
+        }
+
+ 
    
    
       
