@@ -415,6 +415,65 @@ Para consumir los servicios HTTP.
            }
          }
 
+3. Elimine el arreglo (hard code) del metodo get empleados e invoque el URL del servicio
 
+         import { Injectable } from '@angular/core';
+         import { HttpClient } from '@angular/common/http';
+         import { Iempleado } from '../modelo/iempleado';
+         import { Observable } from 'rxjs';
+
+         @Injectable({
+           providedIn: 'root'
+         })
+         export class EmpleadoService {
+
+           private _url: string = "http://localhost:4200/assets/data/empleados.json"
+
+           constructor(private _httpclient: HttpClient) { }
+
+           getEmpleados(): Observable<Iempleado[]> {
+             return this._httpclient.get<Iempleado[]>(this._url);
+           }
+         }
+ 4. Note que la linea: 
+          return this._httpclient.get<Iempleado[]>(this._url);
+          
+    por tanto es necesario crear la interface Iempleado. Ejecute el comando:
+         ng g i modelo/iempleado.
+    
+    Cree los campos en la interface:
+
+         export interface Iempleado {
+             id: number;
+             nombre: string;
+             edad: number;
+         }
+  
+  5. Sobre el componente realice la invocación del metodo del servicio
+         import { Component, OnInit } from '@angular/core';
+         import { EmpleadoService } from '../servicios/empleado.service';
+         import { Empleado } from '../modelo/empleado';
+
+         @Component({
+           selector: 'app-empleado',
+           templateUrl: './empleado.component.html',
+           styleUrls: ['./empleado.component.css']
+         })
+         export class EmpleadoComponent implements OnInit {
+
+           public listaEmpleados: Empleado[];
+
+           constructor( private _empleadoService: EmpleadoService ) { }
+
+         ngOnInit() {
+             this._empleadoService.getEmpleados()
+                   .subscribe( data => this.listaEmpleados = data) ;
+           }
+         }
+  
+  
+  
+    
+    
 
 
