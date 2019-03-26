@@ -334,9 +334,39 @@ Para usar un servicio siga los siguientes pasos:
           }
         }
 
-      
-      
-   
+     
+3. Registre el servicio en app.modules.ts
+
+   - Primero debe importarlo:
+         import { EmpleadoService } from './servicios/empleado.service'
+   - Luego debe incluirlo en la lista de providers
+         providers: [EmpleadoService],
+         
+ 4. Sobre el componente hago uso del servicio, defniendolo primero en el constructor y luego invocandolo en el ngOnInit
+ 
+         import { Component, OnInit } from '@angular/core';
+         import { EmpleadoService } from '../servicios/empleado.service';
+
+         @Component({
+           selector: 'app-empleado',
+           templateUrl: './empleado.component.html',
+           styleUrls: ['./empleado.component.css']
+         })
+         export class EmpleadoComponent implements OnInit {
+
+           public listaEmpleados = [];
+
+           constructor( private _empleadoService: EmpleadoService ) { }
+
+           ngOnInit() {
+             this.listaEmpleados = this._empleadoService.getEmpleados();
+           }
+
+         }
+
+
+
+
    
 
 
