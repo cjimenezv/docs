@@ -18,7 +18,8 @@ COMANDOS
 - Crear un proyecto: ng new my-dream-app
 - Crear un componente: ng g c 'nombre_componente' 
 - Crear un servicio: ng g s 'nombre_servicio'
-- Crear un servicio: ng g cl 'nombre_servicio'
+- Crear una clase: ng g cl 'nombre_servicio'
+- Crear una interface: ng g i modelo/iempleado
 
 ====================================================================================================================================
 CONOCEPTOS
@@ -300,7 +301,7 @@ Es necesario las variables de JSON y Date desde la clase así:
 
  
 ====================================================================================================================================
-SERVICES AND DI  (DEPENDENCY INJECTION) DESING PATTERN
+SERVICES AND DI  (DEPENDENCY INJECTION) DESING PATTERN 
 ====================================================================================================================================
 
 Un servicion nos sirve para entregar datos y para interactuar con aplicaciones fuera de nuestra aplicación. 
@@ -377,8 +378,42 @@ Para usar un servicio siga los siguientes pasos:
 
              }
 
+====================================================================================================================================
+HTTP AND OBSERVABLES AND RxJS
+====================================================================================================================================
+Para consumir los servicios HTTP.
 
-   
+1. Importe la libreria en el modulo app.module.ts
+       import { HttpClientModule } from '@angular/common/http'
+
+       imports: [
+         BrowserModule,
+         AppRoutingModule,
+         FormsModule,
+         HttpClientModule
+       ],
+
+2. Defina sobre el constructor del servicio la variable HttpClient
+
+         import { Injectable } from '@angular/core';
+         import { HttpClient } from '@angular/common/http';
+
+         @Injectable({
+           providedIn: 'root'
+         })
+         export class EmpleadoService {
+
+           constructor(private _httpclient: HttpClient) { }
+
+           getEmpleados(){
+             return [
+                 {id: 1, nombre: "Carlos Jimenez", edad: 47},
+                 {id: 1, nombre: "Roberto Vargas", edad: 32},
+                 {id: 1, nombre: "Juan Rodriguez", edad: 37},
+                 {id: 1, nombre: "Claudia Ballen", edad: 45}
+             ];
+           }
+         }
 
 
 
