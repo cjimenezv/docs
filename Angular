@@ -516,6 +516,88 @@ ROUTING AND NAVIGATION
           ];
   
 
+====================================================================================================================================
+ROUTING AND NAVIGATION - PASANDO PARAMETROS
+====================================================================================================================================
   
+  1. Sobre app-routing.module.ts, defina las rutas que van a llevar parametros:
   
+         const routes: Routes = [
+           {path:'', component: DepartamentosComponent},
+           {path:'departamentos', component: DepartamentosComponent},
+           {path:'departamentosdetalle/:id', component: DetalleDepartamentosComponent},
+           {path:'empleados', component: EmpleadoComponent},
+           {path:'**', component: PageNotFoundComponent},
+         ];
+  
+  2. Sobre el componente desde el cual se va a hacer el llamado se debe:
+       - Importar la libreria de Router
+       - Definirla en el constructor por DI (Dependency Injection)
+       - Crear el metodo des de el cual va a ser llamado el componente al cual se quiere ir
+       
+       
+              import { Component, OnInit } from '@angular/core';
+              import { Router } from '@angular/router';
 
+              @Component({
+                selector: 'app-departamentos',
+                templateUrl: './departamentos.component.html',
+                styleUrls: ['./departamentos.component.css']
+              })
+              export class DepartamentosComponent implements OnInit {
+
+                listaDepartamentos = [
+                  {"id": 1, "nombre": "Cundinamarca"},
+                  {"id": 2, "nombre": "Boyaca"},
+                  {"id": 3, "nombre": "Antioquia"},
+                ]
+
+                /** SE DEBE DEFINIR LA VARIABLE ROUTES POR DEPENDENCY INJECTION **/
+                constructor(private _router: Router  ) { }
+
+                ngOnInit() {
+                }
+
+                /** METODO INVOCADO DESDE LA VISTA **/
+                verDetalle(dep){
+                  this._router.navigate(['/departamentosdetalle', dep.id]);
+                }
+
+              }
+
+    3. Un ejemplo de la vista puede ser:
+              <p>
+                departamentos works!
+              </p>
+              <br>
+              <ul *ngFor="let dep of listaDepartamentos"  (click)="verDetalle(dep)" >
+                        {{ dep.id }}   -   {{dep.nombre}}
+              </ul>
+    4. Sobre el componente destino capture el dato haciendo uso de la libreria "ActivatedRoute"
+    
+    
+            import { Component, OnInit } from '@angular/core';
+            import { ActivatedRoute } from '@angular/router';
+
+            @Component({
+              selector: 'app-detalle-departamentos',
+              templateUrl: './detalle-departamentos.component.html',
+              styleUrls: ['./detalle-departamentos.component.css']
+            })
+            export class DetalleDepartamentosComponent implements OnInit {
+
+              public identificadorDepartamento: string;
+
+              /** DEFINA LA VARIABLE DE TIPO ActivatedRoute**/
+              constructor(private _ar: ActivatedRoute) { }
+
+              /** CAPTURE DE PARAMETRO**/
+              ngOnInit() {
+                let id = this._ar.snapshot.paramMap.get('id');
+                console.log('id:' + id);
+                this.identificadorDepartamento = id;
+              }
+
+            }
+
+    
