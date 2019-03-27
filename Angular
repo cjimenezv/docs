@@ -478,5 +478,28 @@ HTTP ERROR HANDLING
   
 PENDIENTE POR INVESTIGAR!!!!!    
     
+====================================================================================================================================
+ROUTING AND NAVIGATION
+====================================================================================================================================
 
+1. Se debe crear la aplicacion con la opcion de generar routes o routing. Hay dos maneras:
+    - Opcion 1: Al crear el proyecto digito la opcion: ng new my-dream-app --routing
+    - Opcion 2: Al crear el proyecto: "ng new my-dream-app"; una de las preguntas que hace el wizard es siquiere agregar routing
+ 
+ 2. La aplicacion es creada con los siguientes componentes:
+    - app-routing.module.ts
+    - Sobre este archivo defina las rutas asi:
+           const routes: Routes = [
+             {path:'departamentos', component: DepartamentosComponent},
+             {path:'empleados', component: EmpleadoComponent},
+           ];
+    
+ 3. Note que en el componente principal: "app.component.html" fue agregado el tag: "<router-outlet></router-outlet>", es alli donde se mostraran los componentes acuerdo a donde se navege, así:
+         <div style="text-align:center">
+          <h1>
+            Bienvenido: {{ title }}!
+          </h1>
+          <app-menupal></app-menupal>
+        </div>
+        <router-outlet></router-outlet>
 
