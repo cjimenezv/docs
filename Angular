@@ -502,4 +502,10 @@ ROUTING AND NAVIGATION
           <app-menupal></app-menupal>
         </div>
         <router-outlet></router-outlet>
+  4. Desde el componente de menu que se implemente puede realizar el llamado a los compontetes, un ejemplo es:
+        <a routerLink="/departamentos">Departamentos</a>
+        <a routerLink="/empleados">Empleados</a>
+
+  
+  
 
