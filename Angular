@@ -600,4 +600,10 @@ ROUTING AND NAVIGATION - PASANDO PARAMETROS
 
             }
 
+====================================================================================================================================
+ROUTING AND NAVIGATION - CHILD ROUTES
+====================================================================================================================================
+
+  Con esta funcionalidad, se puede construir rutas o ruter hijos dentro de un componente.
     
+    ver: https://www.youtube.com/watch?v=ZoeZxpfTCXk&list=PLC3y8-rFHvwhBRAgFinJR8KHIrCdTkZcZ&index=29
