@@ -632,5 +632,19 @@ FORMS - REACTIVE FORMS
 
   1. Incluya los css de bootstrap: https://getbootstrap.com/
   2. Importe FormModule: import { FormsModule } from '@angular/forms'
+  
+  3. Tenga en cuenta los estados y validaciones de cada componente así:
+  
+         - El control o componente ha sido visitado:
+                   - ng-tuoched: true
+                   - ng-untouched: false
+         - El valor del control ha cambiado:
+                   - ng-dirty: true
+                   - ng-pristine: false
+         - El valor del control es valido:
+                   - ng-valid: true
+                   - ng-invalid: false
+  
+     
 
 
