@@ -630,6 +630,7 @@ FORMS - TEMPLATE DRIVEN FORMS
 FORMS - REACTIVE FORMS
 ====================================================================================================================================
 
-  
+  1. Incluya los css de bootstrap: https://getbootstrap.com/
+  2. Importe FormModule: import { FormsModule } from '@angular/forms'
 
 
