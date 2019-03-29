@@ -645,6 +645,13 @@ FORMS - REACTIVE FORMS
                    - ng-valid: true
                    - ng-invalid: false
   
+  4. Cada de uno de estos estados tiene su propiedad que retorna el booleano correspondiente:
+        - tuoched
+        - untuoched
+        - dirty
+        - pristine
+        - valid
+        - invalid
      
 
 
