@@ -653,5 +653,14 @@ FORMS - REACTIVE FORMS
         - valid
         - invalid
      
+====================================================================================================================================
+VRIABLES GLOBALES 
+====================================================================================================================================
 
+  1. Para el manejo de las variables globales Angular provee dos archivos uno para ambiente de pruebas y otro para producción así:
+      - /src/environments/environmet.ts  ---> Este es por defecto para ambiente de desarrollo y/o pruebas
+      - /src/environments/environmet.prod.ts  ---> Este es por defecto para ambiente de producción
+  2. Por defecto cuando se ejecuta el servidor o se crea el despliege se toma el archivo environmet.ts. Para que tome el otro archivo ejecutar los comandos:
+      - ng serve --prod
+      - ng build prod
 
